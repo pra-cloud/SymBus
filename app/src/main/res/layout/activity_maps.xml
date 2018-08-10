@@ -1,0 +1,108 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MapsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/statusTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RUNNING BUSES"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"/>
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/statusDetails"
+            android:layout_below="@id/statusTitle"
+            tools:context="com.bs.tech.symbus.MapsActivity" />
+
+        <TextView
+            android:id="@+id/statusDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIT to SB Road:\n\nSB Road to SIT:\n"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"
+            android:layout_alignParentBottom="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/MapType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LogoutBtn"
+            android:layout_alignStart="@+id/mainBtn"
+            android:layout_marginBottom="62dp"
+            android:clickable="true"
+            android:elevation="40dp"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
+            android:visibility="invisible"
+            app:backgroundTint="#009688"
+            app:rippleColor="?android:attr/colorActivatedHighlight"
+            app:srcCompat="@drawable/map" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/Timetable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LogoutBtn"
+            android:layout_alignEnd="@+id/LogoutBtn"
+            android:layout_marginBottom="28dp"
+            android:layout_marginEnd="26dp"
+            android:clickable="true"
+            android:elevation="40dp"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
+            android:visibility="invisible"
+            app:backgroundTint="#009688"
+            app:rippleColor="?android:attr/colorActivatedHighlight"
+            app:srcCompat="@drawable/time" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/LogoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/mainBtn"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="17dp"
+            android:layout_toEndOf="@+id/mainBtn"
+            android:clickable="true"
+            android:elevation="40dp"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
+            android:visibility="invisible"
+            app:backgroundTint="#009688"
+            app:rippleColor="?android:attr/colorActivatedHighlight"
+            app:srcCompat="@drawable/power" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/mainBtn"
+            android:layout_above="@id/statusDetails"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="20dp"
+            android:tint="#ffffff"
+            android:visibility="visible"
+            app:backgroundTint="@color/colorAccent"
+            app:elevation="30dp"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
